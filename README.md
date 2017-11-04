@@ -1,6 +1,7 @@
 # Crypto tray ticker
 
 > A system tray app showing crypto prices written in Go
+
 *Fetches the BTC, LTC, ETH & NEO prices from coincap.io*
 
 ## Requirements
