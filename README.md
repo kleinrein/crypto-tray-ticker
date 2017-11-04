@@ -12,6 +12,6 @@
 ## Usage
 
 ```go
-go get github.com/Osuka42g/simple-clock-systray
+go get github.com/kleinrein/crypto-tray-ticker
 crypto-tray-ticker
 ```
