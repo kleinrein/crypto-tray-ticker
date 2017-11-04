@@ -52,8 +52,8 @@ func updateTicker(coin string) Crypto {
 }
 
 func setText(crypto Crypto) {
-	systray.SetTitle(fmt.Sprintf("%.2f$", crypto.PriceUsd))
-	systray.SetTooltip(fmt.Sprintf("%s is currently at %.2f$", crypto.Id, crypto.PriceUsd))
+	systray.SetTitle(fmt.Sprintf("$%.2f", crypto.PriceUsd))
+	systray.SetTooltip(fmt.Sprintf("%s is currently at $%.2f", crypto.Id, crypto.PriceUsd))
 }
 
 func onReady() {
@@ -80,37 +80,37 @@ func onReady() {
 		for {
 			select {
 			case <-menuBtc.ClickedCh:
-				coin = "BTC"
-				setText(updateTicker(coin))
-
 				menuBtc.Check()
 				menuEth.Uncheck()
 				menuLtc.Uncheck()
 				menuNeo.Uncheck()
-			case <-menuEth.ClickedCh:
-				coin = "ETH"
-				setText(updateTicker(coin))
 
+				coin = "BTC"
+				setText(updateTicker(coin))
+			case <-menuEth.ClickedCh:
 				menuEth.Check()
 				menuBtc.Uncheck()
 				menuLtc.Uncheck()
 				menuNeo.Uncheck()
-			case <-menuLtc.ClickedCh:
-				coin = "LTC"
-				setText(updateTicker(coin))
 
+				coin = "ETH"
+				setText(updateTicker(coin))
+			case <-menuLtc.ClickedCh:
 				menuLtc.Check()
 				menuBtc.Uncheck()
 				menuEth.Uncheck()
 				menuNeo.Uncheck()
-			case <-menuNeo.ClickedCh:
-				coin = "NEO"
-				setText(updateTicker(coin))
 
+				coin = "LTC"
+				setText(updateTicker(coin))
+			case <-menuNeo.ClickedCh:
 				menuNeo.Check()
 				menuBtc.Uncheck()
 				menuEth.Uncheck()
 				menuLtc.Uncheck()
+
+				coin = "NEO"
+				setText(updateTicker(coin))
 			case <-menuQuit.ClickedCh:
 				systray.Quit()
 				return
