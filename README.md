@@ -15,3 +15,6 @@
 go get github.com/kleinrein/crypto-tray-ticker
 crypto-tray-ticker
 ```
+
+## License
+[The MIT License (MIT)](https://opensource.org/licenses/MIT)
